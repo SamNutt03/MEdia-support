@@ -1,57 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MEdia — Support</title>
-  <style>
-    :root { --accent:#007aff }
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; margin: 40px; line-height: 1.6; color:#222; }
-    h1 { margin-bottom: 0; }
-    .sub { color:#666; margin-top:4px; }
-    a { color: var(--accent); text-decoration: none; }
-    .card { border:1px solid #eee; border-radius:12px; padding:20px; margin:20px 0; }
-    .muted { color:#666; font-size:0.95rem; }
-    .footer { margin-top:40px; color:#888; font-size:0.9rem; }
-    code { background:#f7f7f7; padding:2px 6px; border-radius:6px; }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>MEdia — Support</title>
+<style>
+  :root {
+    --bg: #ffd6d6;
+    --card-bg: #ffffff;
+    --accent: #007aff;
+    --text: #222;
+    --radius: 18px;
+    --shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: var(--text);
+  }
+
+  .container {
+    background: var(--card-bg);
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    padding: 40px;
+    width: 90%;
+    max-width: 520px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  p.intro {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.5;
+  }
+
+  form {
+    text-align: left;
+  }
+
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 15px;
+    transition: border 0.2s;
+    box-sizing: border-box;
+  }
+
+  input:focus, textarea:focus {
+    border-color: var(--accent);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0,122,255,0.15);
+  }
+
+  button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.1s;
+    width: 100%;
+  }
+
+  button:hover {
+    background: #0066d6;
+  }
+
+  button:active {
+    transform: scale(0.98);
+  }
+
+  .footer {
+    margin-top: 25px;
+    color: #777;
+    font-size: 14px;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
 </head>
+
 <body>
-  <h1>MEdia Support</h1>
-  <p class="sub">iOS app for personal media showcases</p>
+  <div class="container">
+    <h1>MEdia Support</h1>
+    <p class="intro">
+      Have an issue, found a bug, or want to report content?<br>
+      Fill out the form below and we’ll fix it and get back to you shortly.
+    </p>
 
-  <div class="card">
-    <h3>Contact</h3>
-    <p>Email us: <a href="mailto:support@yourdomain.com">support@yourdomain.com</a></p>
-    <!-- If you want a form instead of mailto, swap this block with Formspree (see notes below). -->
+    <form action="https://formspree.io/f/mldaeaad" method="POST">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required />
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="_replyto" placeholder="Enter your email" required />
+
+      <label for="message">Your Issue / Report</label>
+      <textarea id="message" name="message" rows="6" placeholder="Describe your issue..." required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div class="footer">
+      © <span id="year"></span> MEdia 2025 - All rights Reserved
+    </div>
   </div>
 
-  <div class="card">
-    <h3>Account & Data</h3>
-    <ul>
-      <li>Delete your account and data: in app → <b>Settings → Edit Profile → Delete Account</b>.</li>
-      <li>Report content/users: in app → <b>Report</b> (sends a report to our team).</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>API Attributions</h3>
-    <p>MEdia uses the following services:</p>
-    <ul>
-      <li>Spotify Web API — branding & terms respected.</li>
-      <li>The Movie Database (TMDb) — this product uses the TMDb API but is not endorsed or certified by TMDb.</li>
-      <li>RAWG Video Games Database API.</li>
-      <li>Open Library API (Internet Archive).</li>
-    </ul>
-  </div>
-
-  <p class="muted">
-    For privacy and terms, see:
-    <a href="https://yourdomain.com/privacy">Privacy Policy</a> ·
-    <a href="https://yourdomain.com/eula">EULA</a>
-  </p>
-
-  <div class="footer">© <span id="y"></span> MEdia</div>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
