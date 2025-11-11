@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MEdia — Support</title>
+  <style>
+    :root { --accent:#007aff }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; margin: 40px; line-height: 1.6; color:#222; }
+    h1 { margin-bottom: 0; }
+    .sub { color:#666; margin-top:4px; }
+    a { color: var(--accent); text-decoration: none; }
+    .card { border:1px solid #eee; border-radius:12px; padding:20px; margin:20px 0; }
+    .muted { color:#666; font-size:0.95rem; }
+    .footer { margin-top:40px; color:#888; font-size:0.9rem; }
+    code { background:#f7f7f7; padding:2px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <h1>MEdia Support</h1>
+  <p class="sub">iOS app for personal media showcases</p>
+
+  <div class="card">
+    <h3>Contact</h3>
+    <p>Email us: <a href="mailto:support@yourdomain.com">support@yourdomain.com</a></p>
+    <!-- If you want a form instead of mailto, swap this block with Formspree (see notes below). -->
+  </div>
+
+  <div class="card">
+    <h3>Account & Data</h3>
+    <ul>
+      <li>Delete your account and data: in app → <b>Settings → Edit Profile → Delete Account</b>.</li>
+      <li>Report content/users: in app → <b>Report</b> (sends a report to our team).</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>API Attributions</h3>
+    <p>MEdia uses the following services:</p>
+    <ul>
+      <li>Spotify Web API — branding & terms respected.</li>
+      <li>The Movie Database (TMDb) — this product uses the TMDb API but is not endorsed or certified by TMDb.</li>
+      <li>RAWG Video Games Database API.</li>
+      <li>Open Library API (Internet Archive).</li>
+    </ul>
+  </div>
+
+  <p class="muted">
+    For privacy and terms, see:
+    <a href="https://yourdomain.com/privacy">Privacy Policy</a> ·
+    <a href="https://yourdomain.com/eula">EULA</a>
+  </p>
+
+  <div class="footer">© <span id="y"></span> MEdia</div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
